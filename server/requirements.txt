@@ -1,0 +1,4 @@
+# As of 9/2024, I am using Flask 3.0.3 in my virtualenv.
+# Limit to Flask 3.0 releases to benefit from bug fixes without risking
+# compatibility.
+Flask>=3.0.3,<4.0
