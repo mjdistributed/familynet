@@ -12,9 +12,8 @@ See "Appendix" for a list of required packages.
 
 ## Running the app locally in a container
 
-1. Update working directory to ./server: `$ cd server`
-1. Build the Docker image: `$ docker build -t familynet-dev .`
-1. Run a container of the image: `$ docker run -p 5000:5000 familynet-dev`
+1. Build the Docker image: `$ docker build -t familynet-dev:head server/`
+1. Run a container of the image: `$ docker run -p 8080:8080 familynet-dev:head`
 
 ## Unit Testing
 
@@ -32,6 +31,21 @@ To deploy the server to cloud run:
 1. Select the "familynet" configuration.
 
 ## For each new deployment
+
+### Build & Push the image to Artifact Registry
+
+1. Build the Docker image you'd like to deploy (see "Running the app locally in a container")
+1. Tag the image with the Artifact Registry Repository name:
+    ```
+    $ docker tag familynet-dev:head \
+    us-docker.pkg.dev/familynet-434915/familynet-docker/familynet-dev:head
+    ```
+1. Push the image to Artifact Registry:
+    ```
+    $ docker push us-docker.pkg.dev/familynet-434915/familynet-docker/familynet-dev:head
+    ```
+
+### Deploy the image to Cloud Run
 
 TODO
 
