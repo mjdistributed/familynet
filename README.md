@@ -47,7 +47,7 @@ To deploy the server to cloud run:
 
 ### Deploy the image to Cloud Run
 
-TODO
+For now, just do it manually via the guide here: https://cloud.google.com/run/docs/deploying
 
 # Appendix
 
